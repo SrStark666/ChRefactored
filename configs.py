@@ -19,5 +19,6 @@ def send_message(tcp, nome):
             tcp.close()
             break
         msg = (f"[{nome}]:" + msg)
+        tcp.send(bytes(" ", encoding="utf-8"))
         tcp.send(bytes(msg, encoding="utf-8"))
         
